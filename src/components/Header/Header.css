@@ -1,0 +1,12 @@
+.logo {
+    width: 4rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+header {
+    display: flex;
+    gap: 2rem;
+}

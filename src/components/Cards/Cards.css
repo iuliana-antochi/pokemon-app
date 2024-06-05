@@ -1,0 +1,18 @@
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    text-align: center;
+}
+
+button:first-child {
+    margin-right: 1rem;
+}
+
+button {
+  font-family: 'Pokemon','Courier New', Courier, monospace;
+}
