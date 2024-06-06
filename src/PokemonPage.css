@@ -1,0 +1,25 @@
+.pokemon-images {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.pokemon-wrapper {
+    display: flex;
+    border: 1px solid gray;
+
+}
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+}
+
+h3, p {
+    display: inline;
+}
+
+h3 {
+    margin-bottom: 0rem;
+}

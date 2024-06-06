@@ -1,14 +1,16 @@
-.card{
-    border: 1px solid gray;
-    text-align: center;
-}
-
 ul {
     list-style-type: none;
     display: flex;
-    justify-content: center;
     padding: 0;
     gap: 1rem;
+}
+
+.card-pill {
+    justify-content: center;
+}
+
+.pokemon-pill {
+    justify-content: start;
 }
 
 li {

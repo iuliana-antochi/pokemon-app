@@ -1,73 +1,50 @@
-import "./Cards.css";
 import { useState, useEffect } from "react";
-import Card from "../Card/Card";
+import "./Cards.css";
+import Card from "./component/Card/Card";
+import useFetch from "../../hooks/useFetch";
 
 function Cards() {
-  const [data, setData] = useState([]);
-  const [nextUrl, setNextUrl] = useState(
+  const [currentUrl, setCurrentUrl] = useState(
     "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0"
   );
+  const [nextUrl, setNextUrl] = useState(null);
   const [prevUrl, setPrevUrl] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-
-  const fetchData = async (url) => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const result = await response.json();
-      setData(result.results);
-
-      setNextUrl(result.next);
-      setPrevUrl(result.previous);
-      const totalItems = result.count;
-      setTotalPages(Math.ceil(totalItems / 20));
-    } catch (err) {
-      setError(err);
-    }
-    setLoading(false);
-  };
+  const { data, loading, error } = useFetch(currentUrl);
 
   useEffect(() => {
-    fetchData(nextUrl);
-  }, []);
+    if (data) {
+      setNextUrl(data.next);
+      setPrevUrl(data.previous);
+    }
+  }, [data]);
 
   const handleNext = () => {
-    if (nextUrl) {
-      fetchData(nextUrl);
-      setCurrentPage((prevPage) => prevPage + 1);
+    if (nextUrl && currentUrl !== nextUrl) {
+      setCurrentUrl(nextUrl);
     }
   };
 
   const handlePrev = () => {
-    if (prevUrl) {
-      fetchData(prevUrl);
-      setCurrentPage((prevPage) => prevPage - 1);
+    if (prevUrl && currentUrl !== prevUrl) {
+      setCurrentUrl(prevUrl);
     }
   };
 
   return (
     <>
       <div className="cards-wrapper">
-        {data.map((item) => (
-          <Card key={item.id} name={item.name} />
-        ))}
+        {data && data.results
+          ? data.results.map((item) => (
+              <Card key={item.name} name={item.name} />
+            ))
+          : null}
       </div>
       <div className="buttons">
         {error && <p>Error: {error.message}</p>}
-        <button onClick={handlePrev} disabled={currentPage === 1 || loading}>
+        <button onClick={handlePrev} disabled={prevUrl === null || loading}>
           Previous
         </button>
-        <button
-          onClick={handleNext}
-          disabled={currentPage === totalPages || loading}>
+        <button onClick={handleNext} disabled={nextUrl === null || loading}>
           Next
         </button>
       </div>
