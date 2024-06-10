@@ -13,10 +13,6 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
   },
   {
-    path: "/",
-    element: <App />,
-  },
-  {
     path: "/:pokemonName",
     element: <PokemonPage />,
   }

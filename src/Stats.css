@@ -1,0 +1,35 @@
+.stats-li {
+    color: black;
+    display: flex;
+    gap: 1rem;
+}
+
+.stats-ul {
+    display: block;
+}
+
+.stats-li {
+  color: black;
+  display: flex;
+  gap: 1rem;
+}
+
+.stats-ul {
+  display: block;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50;
+  text-align: center;
+}

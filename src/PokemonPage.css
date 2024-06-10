@@ -1,14 +1,19 @@
-.pokemon-images {
-  width: fit-content;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
 .pokemon-wrapper {
     display: flex;
     border: 1px solid gray;
+    gap: 1rem;
 
+}
+
+.pokemon-images {
+    height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.pokemon-images img {
+  margin-bottom: 0.5rem;
 }
 
 .pokemon-info {

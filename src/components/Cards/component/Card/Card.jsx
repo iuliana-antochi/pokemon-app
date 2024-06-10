@@ -1,14 +1,14 @@
 import "./Card.css";
 import { Link } from "react-router-dom";
 import useFetch from "../../../../hooks/useFetch";
-import Pill from "../../../Pill/Pill";
+import Pill from "../../../../Pill";
 
 function Card({ name }) {
-  const { data, isLoading, error } = useFetch(
+  const { data, loading, error } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${name}`
   );
 
-  if (isLoading) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (

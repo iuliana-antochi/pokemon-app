@@ -1,5 +1,5 @@
 import "./Pill.css";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "./hooks/useFetch";
 
 function Pill({ name, className }) {
   const { data, isLoading, error } = useFetch(

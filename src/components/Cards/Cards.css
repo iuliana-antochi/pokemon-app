@@ -1,6 +1,7 @@
 .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     gap: 1.25rem;
     margin-bottom: 1rem;
 }
@@ -16,3 +17,4 @@ button:first-child {
 button {
   font-family: 'Pokemon','Courier New', Courier, monospace;
 }
+
