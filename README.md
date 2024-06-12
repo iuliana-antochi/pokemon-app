@@ -26,8 +26,8 @@ Follow these steps to set up and run the application locally:
 Clone the repository to your local machine using git:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name 
+git clone https://github.com/iuliana-antochi/pokemon-app.git
+cd pokemon-app
 ```
 
 ### 2. Install Dependencies
@@ -35,12 +35,6 @@ Install the project dependencies using npm or yarn:
 
 ```bash
 npm install
-```
-
-Using yarn:
-
-```bash
-yarn install
 ```
 
 ### 3. Start the Development Server
@@ -51,12 +45,6 @@ Using npm:
 
 ```bash
 npm run dev
-```
-
-Using yarn:
-
-```bash
-yarn dev
 ```
 
 ### 4. Open in Browser
