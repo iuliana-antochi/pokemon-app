@@ -1,7 +1,6 @@
-
 # Pokeapp
 
-Pokeapp is React-based application which can be used to improve your knowledge about any Pokemon. 
+Pokeapp is React-based application which can be used to improve your knowledge about any Pokemon.
 
 ## Table of Contents
 
@@ -31,7 +30,8 @@ cd pokemon-app
 ```
 
 ### 2. Install Dependencies
-Install the project dependencies using npm or yarn:
+
+Install the project dependencies using npm:
 
 ```bash
 npm install
@@ -54,4 +54,3 @@ Open your web browser and navigate to:
 http://localhost:5173
 
 You should see your React application running.
-
