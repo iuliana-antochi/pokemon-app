@@ -1,55 +1,55 @@
-import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Cards.css";
 import Card from "./component/Card/Card";
 import useFetch from "../../hooks/useFetch";
+import Pagination from "./component/Pagination/Pagination";
+import NotFoundPage from "../../NotFoundPage";
 
-function Cards() {
-  const [currentUrl, setCurrentUrl] = useState(
-    "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0"
+function Cards({ totalPages, currentPage }) {
+  const navigate = useNavigate();
+  const itemsPerPage = 20;
+  const offset = (currentPage - 1) * itemsPerPage;
+
+  const { data, loading, error } = useFetch(
+    `https://pokeapi.co/api/v2/pokemon/?limit=${itemsPerPage}&offset=${offset}`
   );
-  const [nextUrl, setNextUrl] = useState(null);
-  const [prevUrl, setPrevUrl] = useState(null);
-  const { data, loading, error } = useFetch(currentUrl);
 
-  useEffect(() => {
-    if (data) {
-      setNextUrl(data.next);
-      setPrevUrl(data.previous);
-    }
-  }, [data]);
+  const handleNext = () => navigate(`/page/${currentPage + 1}`);
+  const handlePrev = () => navigate(`/page/${currentPage - 1}`);
 
-  const handleNext = () => {
-    if (nextUrl && currentUrl !== nextUrl) {
-      setCurrentUrl(nextUrl);
-    }
-  };
-
-  const handlePrev = () => {
-    if (prevUrl && currentUrl !== prevUrl) {
-      setCurrentUrl(prevUrl);
-    }
-  };
-
-  return (
-    <>
-      <div className="cards-wrapper">
-        {data && data.results
-          ? data.results.map((item) => (
+  if (loading) {
+    return <p>Loading...</p>;
+  } else if (data && (currentPage > totalPages || currentPage < 1)) {
+    return <NotFoundPage />;
+  } else if (error) {
+    return <p>Error: {error.message}</p>;
+  } else {
+    return (
+      <>
+        <div className="cards-wrapper">
+          {loading ? (
+            <p>Loading...</p>
+          ) : error ? (
+            <p>Error: {error.message}</p>
+          ) : (
+            data &&
+            data.results.map((item) => (
               <Card key={item.name} name={item.name} />
             ))
-          : null}
-      </div>
-      <div className="buttons">
-        {error && <p>Error: {error.message}</p>}
-        <button onClick={handlePrev} disabled={prevUrl === null || loading}>
-          Previous
-        </button>
-        <button onClick={handleNext} disabled={nextUrl === null || loading}>
-          Next
-        </button>
-      </div>
-    </>
-  );
+          )}
+        </div>
+        <div className="buttons">
+          <button onClick={handlePrev} disabled={currentPage === 1}>
+            Previous
+          </button>
+          <Pagination totalPages={totalPages} currentPage={currentPage} />
+          <button onClick={handleNext} disabled={currentPage === totalPages}>
+            Next
+          </button>
+        </div>
+      </>
+    );
+  }
 }
 
 export default Cards;

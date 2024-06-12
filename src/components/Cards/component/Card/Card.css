@@ -1,7 +1,12 @@
-.card{
-    border: 1px solid gray;
-    text-align: center;
-    min-width: 300px;
+.card {
+  border: 1px solid gray;
+  text-align: center;
+  min-height: 21.875rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pokemon-link {
@@ -93,4 +98,11 @@ li {
 
 .fairy {
     background-color: #CFA4A5;
+}
+
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin-bottom: 1rem;
+  }
 }

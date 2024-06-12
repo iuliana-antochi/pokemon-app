@@ -1,5 +1,5 @@
 import "./Stats.css";
-import useFetch from "./hooks/useFetch";
+import useFetch from "../../../hooks/useFetch";
 
 function Stats({ name }) {
   const { data, isLoading, error } = useFetch(
@@ -35,7 +35,7 @@ function Stats({ name }) {
                 <span>{item.base_stat}</span>
               </div>
             </div>
-            <div className="max-value">{maxValues[item.stat.name]}</div>
+            <div className="max-value"> {maxValues[item.stat.name]}</div>
           </li>
         ))
       ) : (

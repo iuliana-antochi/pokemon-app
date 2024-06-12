@@ -15,7 +15,7 @@
 }
 
 .stats-ul {
-  display: block;
+  display: block
 }
 
 .progress-bar {
@@ -32,4 +32,13 @@
   height: 100%;
   background-color: #4caf50;
   text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+ .stats-li {
+        flex-direction: column; 
+        align-items: flex-start; 
+        
+    }
 }

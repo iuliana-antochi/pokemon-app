@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFoundPage from "./NotFoundPage.jsx";
-import PokemonPage from "./PokemonPage.jsx";
+import PokemonPage from './components/PokemonPage/PokemonPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,9 +13,15 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
   },
   {
-    path: "/:pokemonName",
+    path: "/page/:pageNumber",
+    element: <App />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/pokemon/:pokemonName",
     element: <PokemonPage />,
-  }
+    errorElement: <NotFoundPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import "./NotFoundPage.css";
-import sadPickachu from "./assets/sadPickachu.png"
+import sadPickachu from "./assets/sadPickachu.png";
+import Header from "./Header";
 
 function NotFoundPage() {
   return (
     <>
-      <div><h2>404 Not Found</h2> <img className="pickachu" src={sadPickachu} alt="sad Pickachu"/></div>
+      <Header />
+      <div className="notFound-div">
+        <h2>404 Not Found</h2>{" "}
+        <img className="pikachu" src={sadPickachu} alt="sad Pikachu" />
+      </div>
       <Link className="link" to="/">
-        Go back home
+        <button>Go back home</button>
       </Link>
     </>
   );

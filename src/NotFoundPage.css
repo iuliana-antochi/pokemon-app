@@ -2,10 +2,10 @@
     color: black;
 }
 
-div {
+.notFound-div {
     margin-bottom: 1rem;
 }
 
-.pickachu {
+.pikachu {
     width: 10rem;
 }
