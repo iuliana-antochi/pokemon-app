@@ -7,7 +7,7 @@ function Header() {
     <>
       <Link to="/" className="header-link">
         <header>
-          <img className="logo" src={logo}></img>
+          <img className="logo" src={logo} alt="Pikachu"></img>
           <h1>Pokemon World</h1>
         </header>
       </Link>

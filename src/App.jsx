@@ -24,9 +24,9 @@ function App() {
   return (
     <>
       {renderHeader ? <Header /> : null}
-      {totalPages !== null && (
+      {totalPages !== null ? (
         <Cards currentPage={currentPage} totalPages={totalPages} />
-      )}
+      ): null}
     </>
   );
 }

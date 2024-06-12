@@ -70,7 +70,7 @@ function PokemonPage() {
               </div>
               <div>
                 <h3>Stats: </h3>
-                <Stats key={data.id} name={data.name} />
+                <Stats key={data.id} stats={data.stats} />
               </div>
             </div>
           </div>
