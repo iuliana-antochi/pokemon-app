@@ -1,9 +1,9 @@
 .pokemon-wrapper {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .pokemon-images {
@@ -11,6 +11,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
+  padding: 1rem;
 }
 
 .pokemon-images img {
@@ -18,27 +19,26 @@
 }
 
 .pokemon-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .pokemon-title {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 h3 {
-    display: inline;
-    margin-bottom: 0rem;
+  display: inline;
+  margin-bottom: 0rem;
 }
 
 .placeholder-image {
-    width: 6.25rem;
+  width: 6.25rem;
 }
 
-
 @media screen and (max-width: 768px) {
-  .pokemon-wrapper{
+  .pokemon-wrapper {
     display: block;
     padding: 1rem;
   }
