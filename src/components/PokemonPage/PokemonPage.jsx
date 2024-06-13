@@ -58,7 +58,7 @@ function PokemonPage() {
             </div>
             <div className="pokemon-info">
               <h2 className="pokemon-title">{data.name}</h2>
-              <Pill className="pokemon-pill" key={data.id} name={data.name} />
+              <Pill className="pokemon-pill" key={data.id} types={data.types} />
               <div>
                 <h3>Abilities: </h3>
                 {data.abilities.map((item, index) => (

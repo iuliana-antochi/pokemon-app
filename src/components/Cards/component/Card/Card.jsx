@@ -29,7 +29,7 @@ function Card({ name }) {
               className={isPlaceholder ? "placeholder-image" : null}
             />
             <h2>{data.name}</h2>
-            <Pill className="card-pill" key={name} name={name} />
+            <Pill className="card-pill" key={name} types={data.types} />
           </div>
         </Link>
       ) : null}

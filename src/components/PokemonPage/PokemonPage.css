@@ -1,6 +1,7 @@
 .pokemon-wrapper {
     display: flex;
-    border: 1px solid gray;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
     gap: 1rem;
     margin-bottom: 1rem;
 }

@@ -17,6 +17,7 @@ button {
   font-family: 'Pokemon','Courier New', Courier, monospace;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
+    border-radius: 1rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
 }

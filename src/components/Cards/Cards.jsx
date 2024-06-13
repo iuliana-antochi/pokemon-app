@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Cards.css";
 import Card from "./component/Card/Card";
 import useFetch from "../../hooks/useFetch";
