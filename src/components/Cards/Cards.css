@@ -1,18 +1,49 @@
 .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     gap: 1.25rem;
     margin-bottom: 1rem;
 }
 
 .buttons {
-    text-align: center;
-}
-
-button:first-child {
-    margin-right: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
   font-family: 'Pokemon','Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media screen and (max-width: 768px) {
+  .cards-wrapper{
+    display: block;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    margin-bottom: 0.5rem;
+}
 }

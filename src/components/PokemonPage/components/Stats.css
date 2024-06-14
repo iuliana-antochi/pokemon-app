@@ -1,0 +1,35 @@
+
+.stats-ul {
+    display: block;
+}
+
+.stats-li {
+  color: black;
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  width: 12.5rem;
+  height: 1.25rem;
+  background-color: #f0f0f0;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+ .stats-li {
+        flex-direction: column;
+    }
+}
