@@ -1,34 +1,50 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import Cards from "./components/Cards/Cards";
 import Header from "./Header";
 import { useParams } from "react-router-dom";
 import useFetch from "./hooks/useFetch";
+import { PaginationButtons } from "./components/PaginationButtons/PaginationButtons";
+
+const itemsPerPage = 20;
+
+const isPositiveNumber = (str) => {
+  const num = parseInt(str);
+  return !isNaN(num) && num > 0;
+};
 
 function App() {
   const { pageNumber } = useParams();
+
+  // don't even bother with the rest of the code if the param is not a positive number
+  // throw the Error to the NotFoundPage
+
+  if (!isPositiveNumber(pageNumber)) {
+    throw Error("Page not in range");
+  }
+
   const currentPage = parseInt(pageNumber, 10) || 1;
 
-  const [totalPages, setTotalPages] = useState(null);
-  const { data } = useFetch("https://pokeapi.co/api/v2/pokemon/");
+  const offset = (currentPage - 1) * itemsPerPage;
 
-  useEffect(() => {
-    if (data) {
-      setTotalPages(Math.ceil(data.count / 20));
-    }
-  }, [data]);
-
-  const renderHeader =
-    !isNaN(currentPage) && currentPage >= 1 && currentPage <= totalPages;
-
-  return (
-    <>
-      {renderHeader ? <Header /> : null}
-      {totalPages !== null ? (
-        <Cards currentPage={currentPage} totalPages={totalPages} />
-      ): null}
-    </>
+  const { data, loading } = useFetch(
+    `https://pokeapi.co/api/v2/pokemon/?limit=${itemsPerPage}&offset=${offset}`
   );
+
+  if (loading) {
+    return <p>loading...</p>;
+  }
+
+  if (data) {
+    const totalPages = Math.ceil(data.count / 20);
+
+    return (
+      <>
+        <Header />
+        <Cards data={data} totalPages={totalPages} />
+        <PaginationButtons currentPage={currentPage} totalPages={totalPages} />
+      </>
+    );
+  }
 }
 
 export default App;

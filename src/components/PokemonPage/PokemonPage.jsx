@@ -3,9 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import Pill from "../../Pill";
 import Header from "../../Header";
-import NotFoundPage from "../../NotFoundPage";
 import Stats from "./components/Stats";
-import placeholderImage from "../../assets/Pokemon.svg"
+import placeholderImage from "../../assets/Pokemon.svg";
 
 function PokemonPage() {
   const params = useParams();
@@ -15,7 +14,7 @@ function PokemonPage() {
   const navigate = useNavigate();
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <NotFoundPage />;
+  if (error) throw new Error(error.message);
 
   const handleGoBack = () => {
     navigate(-1);
@@ -28,6 +27,7 @@ function PokemonPage() {
           <Header />
           <div className="pokemon-wrapper">
             <div className="pokemon-images">
+              {/* TODO: extract the img into a reusable component */}
               <img
                 src={data.sprites.front_default || placeholderImage}
                 alt={data.name}
