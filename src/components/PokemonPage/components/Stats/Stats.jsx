@@ -1,17 +1,6 @@
 import "./Stats.css";
 
 function Stats({ stats }) {
-
-  const maxValues = {
-    hp: 255,
-    attack: 190,
-    defense: 230,
-    "special-attack": 194,
-    "special-defense": 230,
-    speed: 180,
-  };
-
-
   return (
     <ul className="stats-ul">
       {stats && stats.length > 0 ? (
@@ -23,14 +12,11 @@ function Stats({ stats }) {
                 key={`${item.stat.name}-progress`}
                 className="progress"
                 style={{
-                  width: `${
-                    (item.base_stat / maxValues[item.stat.name]) * 100
-                  }%`,
+                  width: `${Math.min(item.base_stat, 100)}%`,
                 }}>
-                <span>{item.base_stat}</span>
+                {item.base_stat > 100 ? <span>{item.base_stat}%</span> : null}
               </div>
             </div>
-            <div className="max-value">max = {maxValues[item.stat.name]}</div>
           </li>
         ))
       ) : (

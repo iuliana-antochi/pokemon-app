@@ -1,22 +1,4 @@
-.pokemon-wrapper {
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
 
-.pokemon-images {
-  height: fit-content;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  padding: 1rem;
-}
-
-.pokemon-images img {
-  margin-bottom: 0.5rem;
-}
 
 .pokemon-info {
   display: flex;

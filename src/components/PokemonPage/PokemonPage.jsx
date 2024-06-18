@@ -3,9 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import Pill from "../../Pill";
 import Header from "../../Header";
-import NotFoundPage from "../../NotFoundPage";
-import Stats from "./components/Stats";
-import placeholderImage from "../../assets/Pokemon.svg"
+import Stats from "./components/Stats/Stats";
+import Images from "./components/Images/Images";
 
 function PokemonPage() {
   const params = useParams();
@@ -15,7 +14,7 @@ function PokemonPage() {
   const navigate = useNavigate();
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <NotFoundPage />;
+  if (error) throw new Error(error.message);
 
   const handleGoBack = () => {
     navigate(-1);
@@ -27,35 +26,7 @@ function PokemonPage() {
         <>
           <Header />
           <div className="pokemon-wrapper">
-            <div className="pokemon-images">
-              <img
-                src={data.sprites.front_default || placeholderImage}
-                alt={data.name}
-                className={data.sprites.back_shiny ? null : "placeholder-image"}
-                style={data.sprites.back_shiny ? {} : { width: "6.25rem" }}
-              />
-
-              <img
-                src={data.sprites.back_default || placeholderImage}
-                alt={data.name}
-                className={data.sprites.back_shiny ? null : "placeholder-image"}
-                style={data.sprites.back_shiny ? {} : { width: "6.25rem" }}
-              />
-
-              <img
-                src={data.sprites.front_shiny || placeholderImage}
-                alt={data.name}
-                className={data.sprites.back_shiny ? null : "placeholder-image"}
-                style={data.sprites.back_shiny ? {} : { width: "6.25rem" }}
-              />
-
-              <img
-                src={data.sprites.back_shiny || placeholderImage}
-                alt={data.name}
-                className={data.sprites.back_shiny ? null : "placeholder-image"}
-                style={data.sprites.back_shiny ? {} : { width: "6.25rem" }}
-              />
-            </div>
+            <Images data={data}/>
             <div className="pokemon-info">
               <h2 className="pokemon-title">{data.name}</h2>
               <Pill className="pokemon-pill" key={data.id} types={data.types} />

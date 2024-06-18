@@ -6,22 +6,6 @@
     margin-bottom: 1rem;
 }
 
-.buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
-button {
-  font-family: 'Pokemon','Courier New', Courier, monospace;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-}
-
 @media screen and (max-width: 1024px) {
   .cards-wrapper {
     grid-template-columns: repeat(2, 1fr);

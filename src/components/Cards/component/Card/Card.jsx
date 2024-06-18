@@ -27,6 +27,8 @@ function Card({ name }) {
               src={imageSrc}
               alt={data.name}
               className={isPlaceholder ? "placeholder-image" : null}
+              width="96px"
+              height="96px"
             />
             <h2>{data.name}</h2>
             <Pill className="card-pill" key={name} types={data.types} />
