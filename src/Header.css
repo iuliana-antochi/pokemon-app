@@ -1,24 +1,24 @@
 .logo {
-    width: 4rem;
+  width: 4rem;
 }
 
 h1 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
 .header-link {
-    text-decoration: inherit;
-    color: inherit;
+  text-decoration: inherit;
+  color: inherit;
 }
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 1.75rem;;
+    font-size: 1.75rem;
   }
 }

@@ -6,7 +6,7 @@ import placeholderImage from "../../../../assets/Pokemon.svg";
 
 function Card({ name }) {
   const { data, loading, error } = useFetch(
-    `https://pokeapi.co/api/v2/pokemon/${name}`
+    `https://pokeapi.co/api/v2/pokemon/${name}`,
   );
 
   if (loading) return <p>Loading...</p>;

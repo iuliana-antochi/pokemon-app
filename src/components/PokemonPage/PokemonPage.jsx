@@ -9,7 +9,7 @@ import Images from "./components/Images/Images";
 function PokemonPage() {
   const params = useParams();
   const { data, isLoading, error } = useFetch(
-    `https://pokeapi.co/api/v2/pokemon/${params.pokemonName}`
+    `https://pokeapi.co/api/v2/pokemon/${params.pokemonName}`,
   );
   const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ function PokemonPage() {
         <>
           <Header />
           <div className="pokemon-wrapper">
-            <Images data={data}/>
+            <Images data={data} />
             <div className="pokemon-info">
               <h2 className="pokemon-title">{data.name}</h2>
               <Pill className="pokemon-pill" key={data.id} types={data.types} />

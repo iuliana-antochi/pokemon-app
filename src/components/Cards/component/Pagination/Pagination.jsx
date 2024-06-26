@@ -1,5 +1,5 @@
 import "./Pagination.css";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Pagination = ({ totalPages, currentPage }) => {
   const navigate = useNavigate();
@@ -8,12 +8,11 @@ const Pagination = ({ totalPages, currentPage }) => {
     navigate(`/page/${page}`);
   };
 
-const handleClick = (page) => {
-  return () => {
-    handlePageChange(page);
+  const handleClick = (page) => {
+    return () => {
+      handlePageChange(page);
+    };
   };
-};
-
 
   let startPage = currentPage - Math.floor(pagesToShow / 2);
   let endPage = startPage + pagesToShow - 1;
@@ -36,7 +35,7 @@ const handleClick = (page) => {
     buttons.push(
       <button key={i} onClick={handleClick(i)} disabled={currentPage === i}>
         {i}
-      </button>
+      </button>,
     );
   }
 

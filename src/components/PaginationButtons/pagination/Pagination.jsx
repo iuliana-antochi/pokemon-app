@@ -36,7 +36,7 @@ export const Pagination = ({ totalPages, currentPage }) => {
     buttons.push(
       <button key={i} onClick={handleClick(i)} disabled={currentPage === i}>
         {i}
-      </button>
+      </button>,
     );
   }
 

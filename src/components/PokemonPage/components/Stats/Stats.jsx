@@ -13,7 +13,8 @@ function Stats({ stats }) {
                 className="progress"
                 style={{
                   width: `${Math.min(item.base_stat, 100)}%`,
-                }}>
+                }}
+              >
                 {item.base_stat > 100 ? <span>{item.base_stat}%</span> : null}
               </div>
             </div>

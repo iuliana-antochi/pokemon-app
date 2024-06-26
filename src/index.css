@@ -1,13 +1,11 @@
 @font-face {
-  font-family: 'Pokemon';
-  src: url('assets/fonts/pokemon-gsc.ttf') format('truetype');
+  font-family: "Pokemon";
+  src: url("assets/fonts/pokemon-gsc.ttf") format("truetype");
 }
 
 body {
   margin: 0;
   min-width: 21.875rem;
   min-height: 100vh;
-  font-family: 'Pokemon', 'Courier New', Courier, monospace;
+  font-family: "Pokemon", "Courier New", Courier, monospace;
 }
-
-

@@ -11,7 +11,8 @@ function Header() {
           src={logo}
           alt="Pikachu"
           width="96px"
-          height="96px"></img>
+          height="96px"
+        ></img>
         <h1>Pokemon World</h1>
       </header>
     </Link>

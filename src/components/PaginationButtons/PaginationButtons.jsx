@@ -1,4 +1,4 @@
-import './PaginationButtons.css'
+import "./PaginationButtons.css";
 import { useNavigate } from "react-router-dom";
 import { Pagination } from "./pagination/Pagination";
 

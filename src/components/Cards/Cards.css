@@ -1,9 +1,9 @@
 .cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    gap: 1.25rem;
-    margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -15,19 +15,19 @@
 @media screen and (max-width: 1024px) and (orientation: landscape) {
   .cards-wrapper {
     grid-template-columns: repeat(3, 1fr);
-}
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .cards-wrapper{
+  .cards-wrapper {
     display: block;
   }
   .buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   button {
     margin-bottom: 0.5rem;
-}
+  }
 }

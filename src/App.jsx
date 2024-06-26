@@ -24,7 +24,7 @@ function App() {
   const offset = (currentPage - 1) * itemsPerPage;
 
   const { data, loading } = useFetch(
-    `https://pokeapi.co/api/v2/pokemon/?limit=${itemsPerPage}&offset=${offset}`
+    `https://pokeapi.co/api/v2/pokemon/?limit=${itemsPerPage}&offset=${offset}`,
   );
 
   if (loading) {
