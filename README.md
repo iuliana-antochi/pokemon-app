@@ -6,8 +6,6 @@ Pokeapp is React-based application which can be used to improve your knowledge a
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
 
 ## Prerequisites
 
